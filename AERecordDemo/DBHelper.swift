@@ -43,9 +43,6 @@ class DBHelper: NSObject {
     }
     static func getUserByID(userId: String) -> [UserTbl]
     {
-//        let sortDescriptors = [NSSortDescriptor(key: "dateForDrink", ascending: true)]
-//        let request = UserTbl.createFetchRequest(sortDescriptors: sortDescriptors)
-
         let predicate = NSPredicate(format: "id == %@ ",userId)
         let request = UserTbl.createFetchRequest(predicate: predicate, sortDescriptors: nil)
         // returns array of objects
